@@ -59,7 +59,7 @@
 				</div><!---Headercenter-->
 				<div class="bgvideo d-none d-lg-block">
 					<video autoplay="" muted="" loop="" id="videoef" class="hideMb">
-						<source data-src="https://cdn.smobgame.com/template/F62vn/images/home/video-bg-62.mp4" type="video/mp4" src="https://cdn.smobgame.com/template/F62vn/images/home/video-bg-62.mp4">
+						<source data-src="#" type="video/mp4" src="#">
 					</video>
 				</div><!---bgvideo-->
 			</div><!---header-->
@@ -239,6 +239,15 @@
 		$(document).ready(function() {
 		   updateScale1();
 		 });
+		 $(document).ready(function(){
+			// scroll body to 0px on click
+			$('#back-to-top').click(function () {
+				$('body,html').animate({
+					scrollTop: 0
+				}, 400);
+				return false;
+			});
+		});
 		var $win = $(window);
 	 var $lay = $('#layout');
 	 var baseSize = {
