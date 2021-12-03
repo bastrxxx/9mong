@@ -17,9 +17,6 @@
 	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
-	<link rel="stylesheet"  href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
-	<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-	
 </head>
 <body>
 	<div class="wrapper" id="dkLogin">
@@ -49,13 +46,28 @@
 				<li><a href="javascript:void(0)" id="back-to-top" class="totop d-block p-4 mt-3">To top</a></li>
 			</ul>
 		</div><!--End Floatbar-->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-xl  modal-dialog-centered">
+			  <div class="modal-content">
+				<div class="modal-body">
+					<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+						<i class="fa fa-times" aria-hidden="true"></i>
+					  </button>
+					  <div class="embed-responsive embed-responsive-16by9">
+						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/wTcNtgA6gHs"
+			   allowfullscreen></iframe>
+					 </div>	    
+				</div>
+			  </div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		  </div><!-- /.modal -->
 		<div id="layout">
 			<img class="tren18" src="images/18tuoi.jpg" alt=""/>
 			
 			<div class="header"> 
 				<div class="header-center container">
 					<a href="#" class="header-logo"><img class="mx-auto d-block pt-4" src="images/logo.png" alt=""/></a>
-					<a href="#" class="text-center"><img class="mx-auto d-block pt-4" src="images/text.png" alt=""/></a>
+					<a href="#" type="button" class="text-center d-block btnvideo" data-bs-toggle="modal" data-bs-target="#myModal"><img class="mx-auto d-block pt-4" src="images/text.png" alt=""/></a>
 				</div><!---Headercenter-->
 				<div class="bgvideo d-none d-lg-block">
 					<video autoplay="" muted="" loop="" id="videoef" class="hideMb">
@@ -247,7 +259,7 @@
 		$(document).ready(function() {
 		   updateScale1();
 		 });
-		 $(document).ready(function(){
+		$(document).ready(function(){
 			// scroll body to 0px on click
 			$('#back-to-top').click(function () {
 				$('body,html').animate({
@@ -256,11 +268,11 @@
 				return false;
 			});
 		});
-		var $win = $(window);
-	 var $lay = $('#layout');
-	 var baseSize = {
+	var $win = $(window);
+	var $lay = $('#layout');
+	var baseSize = {
 	   w: 1920
-	 }
+	}
 	 function updateScale1() {
 	   var ww = $win.width();
 	   var newScale = 1;
